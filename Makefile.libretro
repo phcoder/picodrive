@@ -118,9 +118,6 @@ else ifeq ($(platform), osx)
       LDFLAGS += $(ARCHFLAGS)
    endif
 
-pico/cd/libchdr/src/libchdr_chd.o: pico/cd/libchdr/src/libchdr_chd.c
-	$(CC) -c $(OBJOUT)$@ $< $(CFLAGS) -D__MACTYPES__=1
-
 else ifeq ($(platform), staticios)
 	TARGET := $(TARGET_NAME)_libretro_ios.a
 	APPLE := 1
@@ -723,3 +720,8 @@ else
 endif
 
 include Makefile
+
+ifeq ($(platform), osx)
+pico/cd/libchdr/src/libchdr_chd.o: pico/cd/libchdr/src/libchdr_chd.c
+	$(CC) -c $(OBJOUT)$@ $< $(CFLAGS) -D__MACTYPES__=1
+endif
