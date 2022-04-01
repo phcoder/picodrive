@@ -117,7 +117,7 @@ else ifeq ($(platform), osx)
       CFLAGS  += $(ARCHFLAGS)
       LDFLAGS += $(ARCHFLAGS)
    endif
-   CFLAGS += -DUINT8=uint8_t -DUINT16=uint16_t -DUINT32=uint32_t
+   CFLAGS += -DUINT8=uint8_t -DUINT16=uint16_t -DUINT32=uint32_t -DINT8=int8_t -DINT16=int16_t -DINT32=int32_t
 
 else ifeq ($(platform), staticios)
 	TARGET := $(TARGET_NAME)_libretro_ios.a
