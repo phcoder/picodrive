@@ -117,6 +117,7 @@ else ifeq ($(platform), osx)
       CFLAGS  += $(ARCHFLAGS)
       LDFLAGS += $(ARCHFLAGS)
    endif
+   CFLAGS += UINT8=uint8_t UINT16=uint16_t UINT32=uint32_t
 
 else ifeq ($(platform), staticios)
 	TARGET := $(TARGET_NAME)_libretro_ios.a
